@@ -412,8 +412,8 @@
       "type": "text",
       "x": 840.8999938964844,
       "y": 201.6705780029297,
-      "width": 114.2839030957222,
-      "height": 20.390380859375,
+      "width": 114.26779174804688,
+      "height": 20.390380859374993,
       "angle": 0,
       "strokeColor": "#1971c2",
       "backgroundColor": "transparent",
@@ -426,8 +426,8 @@
       "frameId": null,
       "roundness": null,
       "seed": 1453266338,
-      "version": 79,
-      "versionNonce": 1828758626,
+      "version": 80,
+      "versionNonce": 133722037,
       "isDeleted": false,
       "boundElements": [
         {
@@ -439,7 +439,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1744127945224,
+      "updated": 1744281964480,
       "link": null,
       "locked": false,
       "text": "tomcat server",
@@ -447,7 +447,7 @@
       "fontFamily": 1,
       "textAlign": "left",
       "verticalAlign": "top",
-      "baseline": 14.000000000000007,
+      "baseline": 14,
       "containerId": null,
       "originalText": "tomcat server",
       "lineHeight": 1.25
@@ -670,8 +670,8 @@
     {
       "id": "CpkDav-sIHPaXgGcbzmLY",
       "type": "arrow",
-      "x": 1088.1138916015625,
-      "y": 249.77752685546875,
+      "x": 1088.029958197322,
+      "y": 249.861482026671,
       "width": 1.59442138671875,
       "height": 44.3797607421875,
       "angle": 0,
@@ -686,11 +686,11 @@
       "frameId": null,
       "roundness": null,
       "seed": 495565182,
-      "version": 81,
-      "versionNonce": 237965666,
+      "version": 86,
+      "versionNonce": 1306018165,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1744128130456,
+      "boundElements": [],
+      "updated": 1744283333937,
       "link": null,
       "locked": false,
       "points": [
@@ -706,13 +706,13 @@
       "lastCommittedPoint": null,
       "startBinding": {
         "elementId": "_tl-o1IDnKu3BrfivWlpF",
-        "focus": 0.5946529280199829,
-        "gap": 3.6191558837890625
+        "focus": 0.5952717679375084,
+        "gap": 3.703111054991325
       },
       "endBinding": {
-        "elementId": "nbUGcxCQ97P4ibr9D4Y4g",
-        "focus": -0.6604937138544581,
-        "gap": 2.1556396484375
+        "elementId": "rOwee13Qww36pi0rmW_Lg",
+        "focus": -0.6222670902093438,
+        "gap": 15.758757231141487
       },
       "startArrowhead": null,
       "endArrowhead": "arrow"
@@ -812,11 +812,16 @@
       "frameId": null,
       "roundness": null,
       "seed": 1879702462,
-      "version": 14,
-      "versionNonce": 1444081634,
+      "version": 15,
+      "versionNonce": 2136145557,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1744128171928,
+      "boundElements": [
+        {
+          "id": "CpkDav-sIHPaXgGcbzmLY",
+          "type": "arrow"
+        }
+      ],
+      "updated": 1744283332096,
       "link": null,
       "locked": false,
       "text": "logic metier",
