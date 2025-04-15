@@ -1,42 +1,61 @@
 package com.aladji.todoapp.service;
 
 import com.aladji.todoapp.model.Todo;
+import com.aladji.todoapp.repository.TodoRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
+import java.util.Optional;
 
 @Service
 public class TodoService {
-    private static final List<Todo> TODO_LIST = new ArrayList<>(
-            List.of(
-                    new Todo(1L, "Learn Spring Boot"),
-                    new Todo(2L, "Learn REST"),
-                    new Todo(3L, "Learn Angular")
-            )
-    );
 
-    public List<Todo> allTodos() {
-        return TODO_LIST;
+    // CRUD -> Create, Read, Update, Delete
+
+    private final TodoRepository repository;
+
+    public TodoService(TodoRepository repository) {
+        this.repository = repository;
     }
 
+    // READ
+    public List<Todo> getAllTodos() {
+        return this.repository.findAll();
+    }
+
+    // CREATE
     public Todo createToto(String title) {
-        String id = TODO_LIST.size() + 1 + ""; // 3 + 1 = "4" = 4
-
-        Todo todo = new Todo(Long.parseLong(id), title);
-        TODO_LIST.add(todo);
-
-        return todo;
+        // Verifier un autre avec meme non
+        Todo newTodo = new Todo(title);
+        return this.repository.save(newTodo);
     }
 
-    public Todo getTodo(Long idTodo) {
-        for (Todo todo : TODO_LIST) {
-            if (todo.getId().equals(idTodo)) { // todo.getId() == idTodo
-                return todo;
-            }
+    // UPDATE
+    public Todo updateTodo(Long id, Todo todo) {
+        if (this.repository.existsById(id)) {
+            Todo existingTodo = this.repository.findById(id).get();
+            existingTodo.setTitle(todo.getTitle()); // Mise à jour
+            return this.repository.save(existingTodo);
         }
         return null;
     }
 
+    // READ
+    public Todo getTodo(Long idTodo) {
+        Optional<Todo> optionalTodo = this.repository.findById(idTodo);
+        if (optionalTodo.isPresent()) {
+            return optionalTodo.get();
+        }
+        return null;
+    }
+
+    // DELETE
+    public Long deleteTodoById(Long id) {
+        boolean existsById = this.repository.existsById(id);
+        if (existsById) {
+            this.repository.deleteById(id);
+            return id;
+        }
+        return null;
+    }
 }
