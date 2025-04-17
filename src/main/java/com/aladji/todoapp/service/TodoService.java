@@ -2,6 +2,7 @@ package com.aladji.todoapp.service;
 
 import com.aladji.todoapp.model.Todo;
 import com.aladji.todoapp.repository.TodoRepository;
+import com.aladji.todoapp.status.TodoStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,9 +25,9 @@ public class TodoService {
     }
 
     // CREATE
-    public Todo createToto(String title) {
+    public Todo createToto(String title, TodoStatus status) {
         // Verifier un autre avec meme non
-        Todo newTodo = new Todo(title);
+        Todo newTodo = new Todo(title, status);
         return this.repository.save(newTodo);
     }
 

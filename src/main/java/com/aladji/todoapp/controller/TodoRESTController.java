@@ -36,7 +36,7 @@ public class TodoRESTController {
     // POST http://localhost:8989/todos  {JSON}
     @PostMapping(path = {"/todos"})
     public Todo addNewTodo(@RequestBody Todo todo) {
-        return this.todoService.createToto(todo.getTitle());
+        return this.todoService.createToto(todo.getTitle(), todo.getStatus());
     }
 
     // PATCH http://localhost:8989/todos/1  {JSON}

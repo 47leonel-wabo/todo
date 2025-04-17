@@ -1,9 +1,7 @@
 package com.aladji.todoapp.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.aladji.todoapp.status.TodoStatus;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
@@ -14,6 +12,9 @@ public class Todo {
     @GeneratedValue
     private Long id;
     private String title;
+
+    @Enumerated(EnumType.STRING)
+    private TodoStatus status;
     private LocalDateTime date;
 
     public Todo() {
@@ -28,6 +29,20 @@ public class Todo {
     public Todo(String title) {
         this.title = title;
         this.date = LocalDateTime.now();
+        this.status = TodoStatus.ENCOURS;
+    }
+
+    public Todo(String title, TodoStatus status) {
+        this.title = title;
+        this.status = status;
+    }
+
+    public TodoStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(TodoStatus status) {
+        this.status = status;
     }
 
     public Todo(Long id, String title) {
