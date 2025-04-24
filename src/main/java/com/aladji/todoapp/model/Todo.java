@@ -35,6 +35,7 @@ public class Todo {
     public Todo(String title, TodoStatus status) {
         this.title = title;
         this.status = status;
+        this.date = LocalDateTime.now();
     }
 
     public TodoStatus getStatus() {
